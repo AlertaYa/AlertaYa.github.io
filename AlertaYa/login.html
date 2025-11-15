@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlertaYa - Iniciar Sesión</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+    <div class="mobile-container">
+        
+        <div class="top-section-login-gradient">
+            <h1 class="app-title-login">AlertaYa</h1>
+            <div class="icon-group-login">
+                <img src="./img/house_icon.png" alt="Icono de Casa" class="icon house-left">
+                <img src="./img/high_five_icon.png" alt="Icono de Saludo" class="icon high-five">
+                <img src="./img/house_icon.png" alt="Icono de Casa" class="icon house-right">
+            </div>
+        </div>
+
+        <main class="content-login-form">
+            <h2 class="form-title-login">Iniciar sesion</h2>
+            
+            <form class="login-form">
+                
+                <div class="input-group">
+                    <img src="./img/porfile_icon.png" alt="Usuario" class="input-icon">
+                    <input type="email" placeholder="" class="text-input" required>
+                </div>
+                
+                <div class="input-group">
+                    <img src="./img/lock_icon.png" alt="Contraseña" class="input-icon">
+                    <input type="password" placeholder="" class="text-input" required>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="button primary-button login-button" 
+                    onclick="window.location.href='dashboard.html'; return false;"
+                >
+                    Siguiente
+                </button>
+            </form>
+
+            </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,178 @@
+/* emergency.css */
+
+/* --- SECCIÓN DEL MAPA --- */
+.map-section {
+    width: 100%;
+    padding: 15px 20px 0; 
+    box-sizing: border-box;
+}
+
+.map-placeholder, 
+#map { 
+    width: 100%;
+    height: 250px; /* Crucial para que el mapa se muestre */
+    background-color: #f0f0f0; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* --- CONTENEDOR DE LA LINEA DE TIEMPO --- */
+.timeline-container {
+    padding: 20px;
+    padding-bottom: 100px; /* Espacio para el botón fijo inferior */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* Línea vertical */
+.timeline-item:not(.last-item)::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 14px; /* Centrado con el dot */
+    width: 2px;
+    height: 100%;
+    background-color: #e0e0e0;
+}
+
+/* Punto del Timeline */
+.timeline-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    margin-right: 15px;
+    flex-shrink: 0; /* Evita que se encoja */
+    margin-top: 5px;
+    border: 3px solid white;
+    z-index: 10;
+}
+
+/* Contenido del Paso */
+.timeline-content {
+    flex-grow: 1;
+}
+
+.step-title {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+    color: #333;
+}
+
+.step-description {
+    font-size: 0.9em;
+    color: #888;
+    margin: 0;
+}
+
+/* --- ESTADO ACTIVO Y COMPLETO --- */
+
+/* Estilo para el paso que se está llenando */
+.timeline-item.active-step .timeline-dot {
+    background: #FFD6E9; /* Color de acento suave */
+    border: 3px solid black;
+    transform: scale(1.1);
+}
+
+/* Estilo para el paso que ya fue completado */
+.timeline-item.completed-step .timeline-dot {
+    background-color: black; 
+    border: none;
+}
+
+/* Títulos de pasos completados/activos */
+.timeline-item.active-step .step-title,
+.timeline-item.completed-step .step-title {
+    color: black;
+}
+
+/* --- INPUTS Y TEXTAREAS --- */
+.step-input {
+    width: calc(100% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 10px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+textarea.step-input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.hidden-input {
+    display: none;
+}
+
+.input-label {
+    cursor: pointer;
+}
+
+/* --- BOTÓN DE CÁMARA --- */
+.camera-control-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+}
+
+.camera-button {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    background-color: #eee;
+    color: black;
+    border: 1px solid #ccc;
+    width: auto;
+    max-width: none;
+    text-align: left;
+}
+
+.file-status-text {
+    font-size: 0.8em;
+    color: #666;
+    margin: 0;
+}
+
+/* --- BOTÓN DE ACCIÓN FIJO INFERIOR --- */
+.next-step-button-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px; /* Igual al mobile-container */
+    padding: 15px 20px;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+}
+
+.next-step-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(to right, #FFFFA6, #FFD6E9); 
+    color: black;
+    border: none;
+    border-radius: 30px;
+    transition: opacity 0.3s;
+}
+
+.next-step-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #ccc;
+    color: #888;
+}

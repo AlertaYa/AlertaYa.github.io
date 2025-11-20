@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlertaYa - Reporte de Emergencia</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/emergency_report.css">
+</head>
+
+<body>
+    <div class="mobile-container">
+
+        <header class="report-header">
+            <button class="back-button" onclick="history.back()">←</button>
+            <h1 class="header-title">AlertaYa</h1>
+            <img src="./img/porfile_icon.png" alt="Perfil" class="header-profile-icon">
+        </header>
+        <div class="map-section">
+            <div id="map" class="map-placeholder">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3441.946829987478!2d-107.9679007246414!3d30.380867674755933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86dcab400a0db16d%3A0x2f5162fee959474!2sUniversidad%20Tecnol%C3%B3gica%20de%20Paquim%C3%A9!5e0!3m2!1ses-419!2smx!4v1763597492700!5m2!1ses-419!2smx" width="100%"
+            height="100%"
+            frameborder="0"
+            style="border:0; border-radius: 10px;"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+            aria-hidden="false"
+            tabindex="0"></iframe>
+            </div>
+        </div>
+        
+</body>
+
+</html>
+
+<main class="timeline-container" id="emergencyForm">
+
+    <div class="timeline-item active-step" id="step1">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <p class="step-title">Acceso GPS</p>
+            <p class="step-description input-label">permitir acceso.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item" id="step2">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <p class="step-title">Teléfonos de Emergencia</p>
+            <input type="tel" id="input2" class="step-input hidden-input"
+                placeholder="Ingresa tus teléfonos de emergencia..." required>
+            <p class="step-description input-label">brinda teléfonos de emergencia..</p>
+        </div>
+    </div>
+
+    <div class="timeline-item" id="step3">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <p class="step-title">Datos</p>
+            <p class="step-description input-label">nombre, direccion, tu telefono.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item" id="step4">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <p class="step-title">Descripción de la emergencia</p>
+            <textarea id="input4" class="step-input hidden-input" placeholder="Escribe aquí los detalles..."
+                required></textarea>
+            <p class="step-description input-label">brindar mas acerca de la emergencia.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item" id="step5">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <p class="step-title">Estado de la persona</p>
+            <textarea id="input5" class="step-input hidden-input" placeholder="Describir estado de las personas..."
+                required></textarea>
+            <p class="step-description input-label">brindar info. de las personas.</p>
+        </div>
+    </div>
+
+    <div class="timeline-item last-item" id="step6">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+            <p class="step-title">Imagen/Video en tiempo real</p>
+
+            <div class="camera-control-container hidden-input">
+                <input type="file" accept="image/*,video/*" capture="environment" id="cameraInput"
+                    class="hidden-input-file">
+                <button type="button" class="button secondary-button camera-button" id="openCameraButton">
+                    Adjuntar Foto o Video
+                </button>
+                <p class="file-status-text" id="fileStatus">No se ha adjuntado ningún archivo.</p>
+            </div>
+
+            <p class="step-description input-label">archivar foto&video de la emergencia.</p>
+        </div>
+    </div>
+
+</main>
+
+<div class="next-step-button-container">
+    <button class="button next-step-button" id="nextStepButton" disabled>Siguiente punto</button>
+</div>
+
+</div>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+
+<script src="./js/emergency.js"></script>
+<script src="./js/map.js"></script>
+</body>
+
+</html>
